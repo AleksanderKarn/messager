@@ -1,0 +1,14 @@
+{% include "home_page.html" %}
+
+<div class="container text-center">
+    <div class="card w-50">
+        <div class="card-body">
+            <h3 class="card-title">Имя: {{ client.full_name }}</h3>
+            <h4 class="card-text">Email адрес: {{ client.email }}</h4>
+            <h5 class="card-title"> {{ client.comment }}</h5>
+            <a href="{% url 'message_app:client_update' client.pk %}" class="btn btn-primary">Изменить</a>
+            <a href="{% url 'message_app:client_delete' client.pk %}" class="btn btn-primary">Удалить</a>
+            <a href="{% url 'message_app:client_list'  %}" class="btn btn-primary">Назад</a>
+        </div>
+    </div>
+</div>

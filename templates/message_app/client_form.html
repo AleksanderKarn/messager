@@ -1,0 +1,10 @@
+{% include "home_page.html" %}
+
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button  class="btn btn-primary" type="submit">Сохранить</button>
+    </form>
+</body>

@@ -1,0 +1,17 @@
+{% include "home_page.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container text-center">
+    <form method="post">
+        {% csrf_token %}
+        <H3>Уверены что хотите удалить Рассылку {{ mailing.time_mailing_start }}?</H3>
+         <button class="btn btn-primary" type="submit">Удалить</button>
+         <a href="{% url 'message_app:mailing_list' %}" class="btn btn-primary">Отмена</a>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% include "home_page.html" %}
+{% for i in client_list %}
+<div class="container text-center">
+    <div class="mb-3">
+        <h4><a href="{{ i.pk }}">{{ i.full_name }}</a></h4>
+    </div>
+        <div class="mb-3">
+            <h5  class="form-label">Email address: {{ i.email }}</h5>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Коментарий: {{ i.comment }}</label>
+        </div>
+</div>
+
+{% endfor %}
+<div class="container text-center">
+        <button><a class="btn btn-primary" href="{% url 'message_app:client_create' %}">Зарегистрировать нового клиента</a></button>
+    </div>
+
+
+
+

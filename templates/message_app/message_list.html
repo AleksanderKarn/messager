@@ -1,0 +1,27 @@
+{% include "home_page.html" %}
+<div class="container text-center">
+<h5>MESSAGE_LIST</h5>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Заголовок письма</th>
+      <th scope="col">Содержание</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%  for i in message_list %}
+    <tr>
+      <th scope="row">{{ i.id }}</th>
+      <td><a href="{{ i.pk }}">{{ i.title }}</a></td>
+      <td>{{ i.content }}</td>
+
+    </tr>
+    {% endfor %}
+  <div class="container text-center">
+    <button><a class="btn btn-primary" href="{% url 'message_app:message_create' %}">Добавить письмо</a></button>
+</div>
+
+  </tbody>
+</table>
